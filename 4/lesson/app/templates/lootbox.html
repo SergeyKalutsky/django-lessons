@@ -1,0 +1,57 @@
+
+
+<html>
+<head>
+    <title>Lootbox Game</title>
+    <style>
+        /* Add your CSS styles here */
+        #lootbox-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }   
+        img {
+            width: 300px;
+            height: 300px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать в игру LootBox!</h1>
+    
+    <div id="lootbox-container">
+        <h1>У тебя выпало</h1>
+        <!-- Add your lootbox elements here -->
+        {% if loot < 80 %} 
+            <img src="/static/common.jpeg" alt="">
+        {% elif loot < 90 %}
+            <img src="/static/rare.jpg" alt="">
+        {% else %}
+            <img src="/static/super_rare.jpg" alt="">
+        {% endif %}
+        <button><a href="/app/lootbox">Попробуй еще!</a></button>
+    </div>
+
+</html>

@@ -1,0 +1,35 @@
+<!-- Modify the daytime view and template to display a different message based on both the time of day and the user's score.
+
+Pass an additional variable score from your daytime view to your template. This variable should represent the user's score (a number from 1 to 100).
+
+In your template, use if, else, and elif to display one of the following messages:
+
+If the hour is less than 12 and the score is above 50, display "Good Morning, User! You're off to a great start with a score above 50!"
+If the hour is between 12 and 17 (inclusive) and the score is above 50, display "Good Afternoon, User! Your score is looking good!"
+If the hour is between 18 and 21 (inclusive) and the score is above 50, display "Good Evening, User! You've had a productive day with a score above 50!"
+If the hour is less than 12 and the score is 50 or below, display "Good Morning, User! Let's try to get that score up today!"
+If the hour is between 12 and 17 (inclusive) and the score is 50 or below, display "Good Afternoon, User! Keep working on increasing your score!"
+If the hour is between 18 and 21 (inclusive) and the score is 50 or below, display "Good Evening, User! There's still time to improve your score!"
+Otherwise, display "Good Night, User! Tomorrow is a new day to improve your score!" -->
+
+<!DOCTYPE html>
+<html>  
+<head>
+    <title>Приветствие в зависимости от времени суток</title>
+</head>
+{% if hour < 12 and score > 50 %}
+    <h1>Доброе утро, {{ user }}! Вы отлично начали день с баллами выше 50!</h1>
+{% elif hour <= 17 and score > 50 %}
+    <h1>Добрый день, {{ user }}! Ваши баллы выглядят хорошо!</h1>
+{% elif hour <= 21 and score > 50 %}
+    <h1>Добрый вечер, {{ user }}! У вас продуктивный день с баллами выше 50!</h1>
+{% elif hour < 12 and score <= 50 %}
+    <h1>Доброе утро, {{ user }}! Давайте попробуем улучшить баллы сегодня!</h1>
+{% elif hour <= 17 and score <= 50 %}
+    <h1>Добрый день, {{ user }}! Продолжайте работать над увеличением баллов!</h1>
+{% elif hour <= 21 and score <= 50 %}
+    <h1>Добрый вечер, {{ user }}! Еще есть время улучшить баллы!</h1>
+{% else %}
+    <h1>Спокойной ночи, {{ user }}! Завтра новый день для улучшения баллов!</h1>
+{% endif %}
+</html>

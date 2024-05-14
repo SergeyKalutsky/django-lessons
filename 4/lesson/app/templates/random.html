@@ -1,0 +1,27 @@
+<!-- Task 1 -->
+<!-- Creates a page which displays a random number between 1 and 100.
+if the number is even, it will be displayed in green, otherwise it will be displayed in red. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Number</title>
+    <style>
+        .green {
+            color: green;
+        }
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Случайное число {{ number }}</h1>
+    <p>
+       {% if number|divisibleby:"2" %}
+            <h1 class="green">{{ number }}</h1>
+        {% else %}
+            <h1 class="red">{{ number }}</h1>
+        {% endif %} 
+    </p>
+</html>

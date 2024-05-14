@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jinja If-Else-Elif Пример</title>
+</head>
+<body>
+    <h1>{{ score }}</h1>
+    {% if score >= 90 %}
+        <h1>Великолепно!</h1>
+    {% elif score >= 80 %}
+        <h1>Хорошая работа!</h1>
+    {% elif score >= 70 %}
+        <h1>Неплохо!</h1>
+    {% else %}
+        <h1>Продолжай пытаться!</h1>
+    {% endif %}
+</body>
+</html>
